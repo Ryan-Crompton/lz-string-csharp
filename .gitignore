@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/lz-string-csharp/bin/Debug/netstandard1.6
+/lz-string-csharp/obj
+/LzString.Test/bin/Debug/netcoreapp2.1
+/LzString.Test/obj
