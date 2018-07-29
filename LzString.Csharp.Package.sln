@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LzString.Csharp", "lz-string-csharp\LzString.Csharp.csproj", "{390DE211-9B52-44FD-BF01-3EC5B755EDD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LzString.Test", "LzString.Test\LzString.Test.csproj", "{D93ADE32-A5AD-48CE-8B8D-DF429A1E3D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LzString.Test", "LzString.Test\LzString.Test.csproj", "{D93ADE32-A5AD-48CE-8B8D-DF429A1E3D48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LzString.TestHarness", "LzString.TestHarness\LzString.TestHarness.csproj", "{87EC783D-503B-4BF2-AAEC-D3177D74BE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LzString.Common", "LzString.Common\LzString.Common.csproj", "{FF9976D9-232D-4983-BFF5-E84315822E7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{D93ADE32-A5AD-48CE-8B8D-DF429A1E3D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D93ADE32-A5AD-48CE-8B8D-DF429A1E3D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D93ADE32-A5AD-48CE-8B8D-DF429A1E3D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87EC783D-503B-4BF2-AAEC-D3177D74BE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87EC783D-503B-4BF2-AAEC-D3177D74BE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87EC783D-503B-4BF2-AAEC-D3177D74BE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87EC783D-503B-4BF2-AAEC-D3177D74BE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9976D9-232D-4983-BFF5-E84315822E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9976D9-232D-4983-BFF5-E84315822E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9976D9-232D-4983-BFF5-E84315822E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9976D9-232D-4983-BFF5-E84315822E7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

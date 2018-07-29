@@ -41,7 +41,7 @@ namespace LZString
             var buf = new int[compressed.Length / 2];
             for (int i = 0, totalLen = buf.Length; i < totalLen; i++)
             {
-                buf[i] = ((int)compressed[i * 2]) * 256 + ((int)compressed[i * 2 + 1]);
+                buf[i] = (int)compressed[i * 2] * 256 + (int)compressed[i * 2 + 1];
             }
             var result = new char[buf.Length];
             for (var i = 0; i < buf.Length; i++)
@@ -68,9 +68,8 @@ namespace LZString
         private static string _decompress(int length, int resetValue, GetNextValue getNextValue)
         {
             var dictionary = new Dictionary<int, string>();
-            int next, enlargeIn = 4, dictSize = 4, numBits = 3, i, bits, resb, maxpower, power;
+            int next, enlargeIn = 4, dictSize = 4, numBits = 3, i, resb;
             var c = 0;
-            string entry = "", w;
             var result = new StringBuilder();
             var data = new DataStruct() { Val = getNextValue(0), Position = resetValue, Index = 1 };
 
@@ -79,9 +78,9 @@ namespace LZString
                 dictionary[i] = Convert.ToChar(i).ToString();
             }
 
-            bits = 0;
-            maxpower = (int)Math.Pow(2, 2);
-            power = 1;
+            var bits = 0;
+            var maxpower = (int)Math.Pow(2, 2);
+            var power = 1;
             while (power != maxpower)
             {
                 resb = data.Val & data.Position;
@@ -137,7 +136,7 @@ namespace LZString
                     return "";
             }
             dictionary[3] = Convert.ToChar(c).ToString();
-            w = Convert.ToChar(c).ToString();
+            var w = Convert.ToChar(c).ToString();
             result.Append(Convert.ToChar(c));
             while (true)
             {
@@ -215,6 +214,8 @@ namespace LZString
                     numBits++;
                 }
 
+                var entry = "";
+
                 if (dictionary.ContainsKey(c))
                 {
                     entry = dictionary[c];
@@ -223,7 +224,7 @@ namespace LZString
                 {
                     if (c == dictSize)
                     {
-                        entry = w + w[0].ToString();
+                        entry = w + w[0];
                     }
                     else
                     {
@@ -233,7 +234,7 @@ namespace LZString
                 result.Append(entry);
 
                 //Add w+entry[0] to the dictionary.
-                dictionary[dictSize++] = w + entry[0].ToString();
+                dictionary[dictSize++] = w + entry[0];
                 enlargeIn--;
                 w = entry;
 

@@ -7,3 +7,9 @@
 /lz-string-csharp/obj
 /LzString.Test/bin/Debug/netcoreapp2.1
 /LzString.Test/obj
+/LzString.Common/bin/Debug/netcoreapp2.1
+/LzString.Common/obj/Debug/netcoreapp2.1
+/LzString.Common/obj
+/LzString.TestHarness/bin/Debug/netcoreapp2.1
+/LzString.TestHarness/obj/Debug/netcoreapp2.1
+/LzString.TestHarness/obj

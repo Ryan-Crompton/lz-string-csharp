@@ -16,15 +16,15 @@ namespace LZString
                 case 1: return res + "===";
                 case 2: return res + "==";
                 case 3: return res + "=";
+                default:
+                    return null;
             }
-
-            return null;
         }
 
         public static string CompressToUtf16(string input)
         {
             if (input == null) return "";
-            return _compress(input, 15, (a) => F(a + 32)) + " ";
+            return _compress(input, 15, a => F(a + 32)) + " ";
         }
 
 
@@ -36,7 +36,7 @@ namespace LZString
             for (int i = 0, totalLen = compressed.Length; i < totalLen; i++)
             {
                 var currentValue = Convert.ToInt32(compressed[i]);
-                buf[i * 2] = (byte) (((uint) currentValue) >> 8);
+                buf[i * 2] = (byte) ((uint) currentValue >> 8);
                 buf[i * 2 + 1] = (byte) (currentValue % 256);
             }
 
@@ -91,7 +91,7 @@ namespace LZString
                         {
                             for (i = 0; i < contextNumBits; i++)
                             {
-                                contextDataVal = (contextDataVal << 1);
+                                contextDataVal = contextDataVal << 1;
                                 if (contextDataPosition == bitsPerChar - 1)
                                 {
                                     contextDataPosition = 0;
@@ -213,7 +213,7 @@ namespace LZString
                     {
                         for (i = 0; i < contextNumBits; i++)
                         {
-                            contextDataVal = (contextDataVal << 1);
+                            contextDataVal = contextDataVal << 1;
                             if (contextDataPosition == bitsPerChar - 1)
                             {
                                 contextDataPosition = 0;
@@ -343,13 +343,14 @@ namespace LZString
             //Flush the last char
             while (true)
             {
-                contextDataVal = (contextDataVal << 1);
+                contextDataVal = contextDataVal << 1;
                 if (contextDataPosition == bitsPerChar - 1)
                 {
                     contextData.Append(getCharFromInt(contextDataVal));
                     break;
                 }
-                else contextDataPosition++;
+
+                contextDataPosition++;
             }
 
             return contextData.ToString();
