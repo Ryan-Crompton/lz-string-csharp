@@ -1,12 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace>LZString</RootNamespace>
     <AssemblyName>LZString</AssemblyName>
     <Version>1.0.0.0</Version>
-    <Authors>Ryan Wilson</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>LzString.CSharp.dotnet</PackageId>
+    <Description>LzString dotnet Compression Library</Description>
+    <PackageProjectUrl>https://github.com/Ryan-Crompton/lz-string-csharp/blob/master/README.md</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Ryan-Crompton/lz-string-csharp/</RepositoryUrl>
+    <Authors>LzString</Authors>
+    <Product>LzString</Product>
   </PropertyGroup>
-
 </Project>

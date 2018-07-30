@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <Description>Extensions Library for the LzString Compression Library</Description>
+    <Authors>LzString.Extensions</Authors>
   </PropertyGroup>
 
   <ItemGroup>
