@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\lz-string-csharp\LzString.Csharp.csproj" />
+    <ProjectReference Include="..\LzString.Extensions\LzString.Extensions.csproj" />
   </ItemGroup>
 
   <ItemGroup>

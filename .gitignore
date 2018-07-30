@@ -13,3 +13,5 @@
 /LzString.TestHarness/bin/Debug/netcoreapp2.1
 /LzString.TestHarness/obj/Debug/netcoreapp2.1
 /LzString.TestHarness/obj
+/LzString.Extensions/bin/Debug/netstandard1.6
+/LzString.Extensions/obj

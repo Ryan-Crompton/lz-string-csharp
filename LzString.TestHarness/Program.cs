@@ -9,6 +9,7 @@ namespace LzString.TestHarness
         static void Main(string[] args)
         {
             OutputHelper.WriteInfo("Generation input parameters required.");
+
             uint maxStringLength = 0, maxRows = 0;
             while (maxStringLength == 0)
             {
@@ -30,10 +31,18 @@ namespace LzString.TestHarness
             }
 
             var strings = Random.Strings(maxStringLength, maxRows);
-            
-            var encodedUriComponentDict = strings.CompressToEncodedUriComponentDict();
-            
-            FileHelper.WriteJsonFile(filePath, "compressEncodedUriComponent", encodedUriComponentDict);
+            var encodedUriComponentDict = strings.CompressToEncodedUriComponentKvps();
+
+            try
+            {
+                FileHelper.WriteJsonFile(filePath, "compressEncodedUriComponent", encodedUriComponentDict);
+            }
+            catch (Exception)
+            {
+                OutputHelper.WriteError($"Unable to write to file: {filePath}");
+                Console.ReadLine();
+                return;
+            }
 
             OutputHelper.WriteInfo("Compression Files created");
             Console.ReadLine();
