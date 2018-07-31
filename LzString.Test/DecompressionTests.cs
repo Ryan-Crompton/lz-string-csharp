@@ -137,12 +137,26 @@ namespace LzString.Test
             var tempFileName = Guid.NewGuid().ToString();
             FileHelper.GenerateJsonFile(Path.GetTempPath(), tempFileName, Strings.ToArray());
             EncodedUriComponentCompressionDict =
-                FileHelper.GetJsonKeyValuePairs(Path.GetTempPath(), tempFileName);
+                FileHelper.GetJsonKeyValuePairs(Path.GetTempPath(), tempFileName, true);
             foreach (var entry in EncodedUriComponentCompressionDict)
             {
                 var output = DecompressFromEncodedUriComponent(entry.Value);
                 Assert.AreEqual(entry.Key, output);
             }
         }
+
+        //[TestMethod]
+        //public void ShouldDecompressFromEncodedUriComponentFromJavaScriptGeneratedFile()
+        //{
+        //    var tempFileName = Guid.NewGuid().ToString();
+        //    FileHelper.GenerateJsonFileFromJavaScript(Path.GetTempPath(), tempFileName, Strings.ToArray());
+        //    EncodedUriComponentCompressionDict =
+        //        FileHelper.GetJsonKeyValuePairs(Directory.GetCurrentDirectory(), "compress", false);
+        //    foreach (var entry in EncodedUriComponentCompressionDict)
+        //    {
+        //        var output = DecompressFromEncodedUriComponent(entry.Value);
+        //        Assert.AreEqual(entry.Key, output);
+        //    }
+        //}
     }
 }

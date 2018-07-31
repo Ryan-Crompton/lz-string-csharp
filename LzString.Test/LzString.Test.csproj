@@ -17,4 +17,10 @@
     <ProjectReference Include="..\LzString.Extensions\LzString.Extensions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="exportCompressedStrings.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
