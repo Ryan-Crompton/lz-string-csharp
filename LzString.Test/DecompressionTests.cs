@@ -145,18 +145,18 @@ namespace LzString.Test
             }
         }
 
-        //[TestMethod]
-        //public void ShouldDecompressFromEncodedUriComponentFromJavaScriptGeneratedFile()
-        //{
-        //    var tempFileName = Guid.NewGuid().ToString();
-        //    FileHelper.GenerateJsonFileFromJavaScript(Path.GetTempPath(), tempFileName, Strings.ToArray());
-        //    EncodedUriComponentCompressionDict =
-        //        FileHelper.GetJsonKeyValuePairs(Directory.GetCurrentDirectory(), "compress", false);
-        //    foreach (var entry in EncodedUriComponentCompressionDict)
-        //    {
-        //        var output = DecompressFromEncodedUriComponent(entry.Value);
-        //        Assert.AreEqual(entry.Key, output);
-        //    }
-        //}
+        [TestMethod]
+        public void ShouldDecompressFromEncodedUriComponentFromJavaScriptGeneratedFile()
+        {
+            var tempFileName = Guid.NewGuid().ToString();
+            FileHelper.GenerateJsonFileFromJavaScript(Path.GetTempPath(), tempFileName, Strings.ToArray());
+            EncodedUriComponentCompressionDict =
+                FileHelper.GetJsonKeyValuePairs(Directory.GetCurrentDirectory(), "compress", false);
+            foreach (var entry in EncodedUriComponentCompressionDict)
+            {
+                var output = DecompressFromEncodedUriComponent(entry.Value);
+                Assert.AreEqual(entry.Key, output);
+            }
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace LzString.Common
                     using (var reader = new StreamReader(fs, Encoding.Unicode))
                         return reader.ReadToEnd();
                 }
-                using (var reader = new StreamReader(fs,Encoding.UTF8))
+                using (var reader = new StreamReader(fs,Encoding.Unicode))
                     return reader.ReadToEnd();
             }
         }
@@ -40,7 +40,7 @@ namespace LzString.Common
 
         public static void GenerateJsonFileFromJavaScript(string getTempPath, string tempFileName, string[] toArray)
         {
-            const string cmdText = "npm install lz-string && node exportCompressedStrings.js && exit";
+            const string cmdText = "npm install lz-string && node exportCompressedStrings.js & exit";
             var cmd = new Process
             {
                 StartInfo =

@@ -20,7 +20,7 @@ var emptyArray = Array.apply(null, Array(10000)).map(Number.prototype.valueOf,0)
 
 for(var i = 0; i < 1000; i++){
     var str = emptyArray.map(() => shuffleArray(charsArray)[0]).toString();
-    var compressed = lzString.compress(str);
+    var compressed = lzString.compressToEncodedURIComponent(str);
     outputArray.push({Key: str, Value: compressed});
 }
 
