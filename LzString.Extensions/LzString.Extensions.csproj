@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <Description>Extensions Library for the LzString Compression Library</Description>
+    <Authors>LzString.Extensions</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\lz-string-csharp\LzString.Csharp.csproj" />
+  </ItemGroup>
+
+</Project>
